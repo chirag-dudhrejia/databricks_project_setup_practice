@@ -1,5 +1,37 @@
 myenv
 
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+
+# VSCode
+.vscode/
+
+# Databricks
+*.dbc
+*.dbc_archive
+*.dbfs/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Environment files
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
