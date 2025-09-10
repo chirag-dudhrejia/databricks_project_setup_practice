@@ -37,9 +37,3 @@ def read_json_from_s3(bucket, key, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS
 def write_json_to_s3(bucket, key, obj, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION):
     s3 = get_s3_client(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION)
     s3.put_object(Bucket=bucket, Key=key, Body=json.dumps(obj).encode("utf-8"))
-
-def list_prefix(bucket, prefix):
-    paginator = s3.get_paginator("list_objects_v2")
-    for page in paginator.paginate(Bucket=bucket, Prefix=prefix):
-        for o in page.get("Contents", []):
-            yield o["Key"]
